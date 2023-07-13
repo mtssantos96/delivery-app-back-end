@@ -1,9 +1,13 @@
 {
   "version": 2,
   "builds": [
-    { "src": "./api/server.js", "use": "@vercel/node" }
+    { "src": "src/api/server.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/" }
-  ]
+    { "src": "/(.*)", "dest": "src/api/server.js" }
+  ],
+  "dependencies": {
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3"
+  }
 }
